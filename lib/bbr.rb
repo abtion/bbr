@@ -1,8 +1,10 @@
 require "bbr/version"
+require 'active_support/all'
 require 'net/http'
 require 'nokogiri'
 require 'bbr/get_id_from_address'
 require 'bbr/get_building_data_from_id'
+
 
 module BBR
   def self.building_data_from_address(address)

@@ -20,7 +20,7 @@ module BBR
     end
 
     def self.formatted_response(response=nil)
-      if response.present?
+      if response.present? && !response.at_xpath("//Fault").try(:content).present?
         {
           building_area: response.at_xpath("//BebyggetAreal").try(:content),
           building_age: (Time.now.year - response.at_xpath("//Opfoerselsaar").try(:content).to_i).to_i,
