@@ -28,6 +28,7 @@ Or install it yourself as:
 ENV['BBR_USERNAME']='xxxx'
 ENV['BBR_PASSWORD']='xxxx'
 ```
+Contact Nicolai or Jesper for credentials if you are a member of the Abtion Team
 
 ```ruby
 BBR.building_data_from_address("Danas Plads 17, 1915 Frederiksberg")
