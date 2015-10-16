@@ -10,7 +10,7 @@ describe Bbr do
     let(:id) { "e85796fd-a59a-4563-aa98-aef6e7c71d19" }
 
     it 'finds building data from address' do
-      expect(BBR.building_data_from_address(address)[:building_area]).to be_present
+      expect(BBR.building_data_from_address(address)[:building][:area]).to be_present
     end
 
     it "finds an ID from address" do
@@ -18,7 +18,7 @@ describe Bbr do
     end
 
     it "finds building data from ID" do
-      expect(BBR.building_data_from_bbr_id(id)[:building_area]).to be_present
+      expect(BBR.building_data_from_bbr_id(id)[:building][:area]).to be_present
     end
   end
 

@@ -5,7 +5,6 @@ require 'nokogiri'
 require 'bbr/get_id_from_address'
 require 'bbr/get_building_data_from_id'
 
-
 module BBR
   def self.building_data_from_address(address)
     building_data_from_bbr_id(bbr_id_from_address(address))

@@ -22,15 +22,26 @@ module BBR
     def self.formatted_response(response=nil)
       if response.present? && !response.at_xpath("//Fault").try(:content).present?
         {
-          building_area: response.at_xpath("//BebyggetAreal").try(:content),
-          building_age: (Time.now.year - response.at_xpath("//Opfoerselsaar").try(:content).to_i).to_i,
-          roof_type: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
-          heating: response.at_xpath("//Varmeinstallation/Value").try(:content),
-          heating_source: response.at_xpath("//Opvarmningsmiddel/Value").try(:content),
-          outer_wall_material: response.at_xpath("//Ydervaegsmateriale/Value").try(:content),
-          floors: response.at_xpath("//AntalEtager").try(:content),
-          material: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
-          roof_area: response.at_xpath("//UdnyttetTagetageareal").try(:content)
+          building: {
+            age: (Time.now.year - response.at_xpath("//Opfoerselsaar").try(:content).to_i).to_i,
+            area: response.at_xpath("//BebyggetAreal").try(:content),
+            roof: {
+              type: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
+              material: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
+              area: response.at_xpath("//UdnyttetTagetageareal").try(:content)
+
+            },
+            heating: {
+              installation: response.at_xpath("//Varmeinstallation/Value").try(:content),
+              means: response.at_xpath("//Opvarmningsmiddel/Value").try(:content)
+            },
+            outer_wall: {
+              material: response.at_xpath("//Ydervaegsmateriale/Value").try(:content),
+            },
+            floor: {
+              numbers: response.at_xpath("//AntalEtager").try(:content)
+            }
+          }
         }
       else
         Hash.new
