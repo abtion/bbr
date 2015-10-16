@@ -6,6 +6,10 @@ module BBR
       id.present? ? formatted_response(request(request_action, xml_body(id))) : Hash.new
     end
 
+    def self.raw_call(id)
+      request(request_action, xml_body(id)) if id.present?
+    end
+
   private
     def self.xml_body(id)
       <<-XML
@@ -29,7 +33,6 @@ module BBR
             roof: {
               material: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
               area: response.at_xpath("//UdnyttetTagetageareal").try(:content)
-
             },
             heating: {
               installation: response.at_xpath("//Varmeinstallation/Value").try(:content),

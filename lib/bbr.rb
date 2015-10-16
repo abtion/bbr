@@ -22,6 +22,10 @@ module BBR
     BBR::GetBuildingDataFromId.call(id)
   end
 
+  def self.raw_building_data_from_bbr_id(id)
+    BBR::GetBuildingDataFromId.raw_call(id)
+  end
+
 private
   def request(action, body)
     response = nil

@@ -37,6 +37,12 @@ BBR.building_data_from_address("Danas Plads 17, 1915 Frederiksberg")
 
 ```
 
+```ruby
+BBR.raw_building_data_from_address("Danas Plads 17, 1915 Frederiksberg")
+=> LOTS OF XML
+
+```
+
 
 ## Development
 

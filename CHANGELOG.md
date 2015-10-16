@@ -14,3 +14,7 @@
 
 * add attr accessors to BBR module
 * change response structure
+
+## v.1.0.4
+
+* add raw_building_data_from_bbr_id method to access raw response data from BBR
