@@ -18,3 +18,9 @@
 ## v.1.0.4
 
 * add raw_building_data_from_bbr_id method to access raw response data from BBR
+
+
+## v.1.0.5
+
+* add raw_building_data_from_address method to access raw response data from BBR
+

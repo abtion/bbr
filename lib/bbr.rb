@@ -14,6 +14,10 @@ module BBR
     building_data_from_bbr_id(bbr_id_from_address(address))
   end
 
+  def self.raw_building_data_from_address(address)
+    raw_building_data_from_bbr_id(bbr_id_from_address(address))
+  end
+
   def self.bbr_id_from_address(address)
     BBR::GetIdFromAddress.call(address)
   end
