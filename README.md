@@ -33,7 +33,7 @@ Contact Nicolai or Jesper for credentials if you are a member of the Abtion Team
 
 ```ruby
 BBR.building_data_from_address("Danas Plads 17, 1915 Frederiksberg")
-=> {:building_area=>"427", :building_age=>98, :roof_type=>"Tegl", :roof_tilt=>3, :heating=>"FjernvarmeBlokvarme", :heating_source=>"NotDefined", :formatted_heating=>"Fjernvarme", :outer_wall_material=>"Mursten"}
+=> {:building=>{:age=>98, :area=>"427", :floors=>"6", :roof=>{:material=>"Tegl", :area=>"0"}, :heating=>{:installation=>"FjernvarmeBlokvarme", :means=>"NotDefined"}, :outer_wall=>{:material=>"Mursten"}}}
 
 ```
 
