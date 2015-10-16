@@ -24,9 +24,10 @@ Or install it yourself as:
 ## Usage
 
 ### ENVIRONMENT VARIABLES
+in initializer
 ```ruby
-ENV['BBR_USERNAME']='xxxx'
-ENV['BBR_PASSWORD']='xxxx'
+BBR.username = ENV['BBR_USERNAME']
+BBR.password = ENV['BBR_PASSWORD']
 ```
 Contact Nicolai or Jesper for credentials if you are a member of the Abtion Team
 

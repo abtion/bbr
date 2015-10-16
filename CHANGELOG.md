@@ -9,3 +9,8 @@
 ## v.1.0.2
 
 * change response format
+
+## v.1.0.3
+
+* add attr accessors to BBR module
+* change response structure

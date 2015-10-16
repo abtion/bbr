@@ -6,6 +6,10 @@ require 'bbr/get_id_from_address'
 require 'bbr/get_building_data_from_id'
 
 module BBR
+  class << self
+    attr_accessor :username, :password
+  end
+
   def self.building_data_from_address(address)
     building_data_from_bbr_id(bbr_id_from_address(address))
   end
@@ -49,8 +53,8 @@ private
         <soapenv:Header>
           <Security xmlns="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
             <UsernameToken>
-                <Username>#{ ENV['BBR_USERNAME'] }</Username>
-                <Password>#{ ENV['BBR_PASSWORD'] }</Password>
+                <Username>#{ BBR.username }</Username>
+                <Password>#{ BBR.password }</Password>
             </UsernameToken>
           </Security>
         </soapenv:Header>

@@ -25,8 +25,8 @@ module BBR
           building: {
             age: (Time.now.year - response.at_xpath("//Opfoerselsaar").try(:content).to_i).to_i,
             area: response.at_xpath("//BebyggetAreal").try(:content),
+            floors: response.at_xpath("//AntalEtager").try(:content),
             roof: {
-              type: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
               material: response.at_xpath("//Tagdaekningsmateriale/Value").try(:content),
               area: response.at_xpath("//UdnyttetTagetageareal").try(:content)
 
@@ -37,9 +37,6 @@ module BBR
             },
             outer_wall: {
               material: response.at_xpath("//Ydervaegsmateriale/Value").try(:content),
-            },
-            floor: {
-              numbers: response.at_xpath("//AntalEtager").try(:content)
             }
           }
         }
