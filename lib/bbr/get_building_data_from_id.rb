@@ -28,6 +28,7 @@ module BBR
         {
           building: {
             age: (Time.now.year - response.at_xpath("//Opfoerselsaar").try(:content).to_i).to_i,
+            built_year: response.at_xpath("//Opfoerselsaar").try(:content).to_i,
             area: response.at_xpath("//BebyggetAreal").try(:content),
             floors: response.at_xpath("//AntalEtager").try(:content),
             roof: {

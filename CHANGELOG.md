@@ -24,3 +24,6 @@
 
 * add raw_building_data_from_address method to access raw response data from BBR
 
+## v.1.0.6
+
+* add built_year to data
