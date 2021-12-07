@@ -7,4 +7,8 @@
 /pkg/
 /spec/reports/
 /tmp/
-.env
+
+# Ignore local environment configs
+.env.local
+.env.development.local
+.env.test.local
